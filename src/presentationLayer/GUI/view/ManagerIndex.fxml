@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="500.0" prefWidth="750.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationLayer.GUI.controller.ManagerIndex">
+   <children>
+      <TabPane prefHeight="500.0" prefWidth="750.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <tabs>
+          <Tab text="景点管理">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="513.0" fitWidth="1133.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/管理员界面背景图.jpg" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="manageScenic" editable="true" prefHeight="473.0" prefWidth="656.0">
+                          <columns>
+                            <TableColumn fx:id="name" prefWidth="75.0" text="景点名称" />
+                            <TableColumn fx:id="intro" prefWidth="219.0" text="景点简介" />
+                              <TableColumn fx:id="pop" prefWidth="90.0" text="热度" />
+                              <TableColumn fx:id="rest" prefWidth="90.0" text="休息区" />
+                              <TableColumn fx:id="toliet" prefWidth="90.0" text="卫生间" />
+                              <TableColumn fx:id="way" prefWidth="90.0" text="岔路数" />
+                          </columns>
+                        </TableView>
+                        <Button fx:id="addScenic" layoutX="668.0" layoutY="146.0" mnemonicParsing="false" onAction="#addScenic" style="-fx-background-color: #ff0202;" text="添加" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteScenic" layoutX="668.0" layoutY="258.0" mnemonicParsing="false" onAction="#deleteScenic" style="-fx-background-color: #ff0202;" text="删除" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="back" layoutX="661.0" layoutY="429.0" mnemonicParsing="false" onAction="#backToIndex" style="-fx-background-color: #ff0202;" text="返回上一级" textFill="WHITE">
+                           <font>
+                              <Font size="13.0" />
+                           </font>
+                        </Button>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="道路管理">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="513.0" fitWidth="1133.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/管理员界面背景图.jpg" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="manageEdge" editable="true" prefHeight="473.0" prefWidth="350.0">
+                          <columns>
+                            <TableColumn fx:id="edgeName1" prefWidth="94.0" text="景点" />
+                            <TableColumn fx:id="edgeName2" prefWidth="94.0" text="景点" />
+                              <TableColumn fx:id="edgeDistance" minWidth="80.0" text="距离" />
+                              <TableColumn fx:id="edgeTimeCost" minWidth="80.0" text="时间花费" />
+                          </columns>
+                        </TableView>
+                        <TextField fx:id="oneName" layoutX="515.0" layoutY="30.0" />
+                        <TextField fx:id="otherName" layoutX="515.0" layoutY="79.0" />
+                        <TextField fx:id="distance" layoutX="515.0" layoutY="126.0" />
+                        <TextField fx:id="timeCost" layoutX="515.0" layoutY="179.0" />
+                        <Label layoutX="382.0" layoutY="31.0" text="请输入景点名称： ">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="382.0" layoutY="80.0" text="请输入景点名称： ">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="414.0" layoutY="127.0" text="请输入距离： ">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="382.0" layoutY="180.0" text="请输入时间花费： ">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="addEdge" layoutX="616.0" layoutY="237.0" mnemonicParsing="false" onAction="#addEdge" style="-fx-background-color: #ff0202;" text="添加" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="deleteEdge" layoutX="616.0" layoutY="310.0" mnemonicParsing="false" onAction="#deleteEdge" style="-fx-background-color: #ff0202;" text="删除" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                        <Label layoutX="375.0" layoutY="319.0" text="在左侧表中选中指定边后点击">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab text="发布公告">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="513.0" fitWidth="1133.0" layoutX="-56.0" layoutY="-2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/管理员界面背景图.jpg" />
+                           </image>
+                        </ImageView>
+                        <Label layoutX="298.0" layoutY="81.0" text="请输入公告内容~">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <textFill>
+                              <RadialGradient centerX="0.5055555555555555" centerY="0.5" radius="0.17441860465116288">
+                                 <stops>
+                                    <Stop color="#eb5500" />
+                                    <Stop color="#eb9a00" offset="1.0" />
+                                 </stops>
+                              </RadialGradient>
+                           </textFill>
+                        </Label>
+                        <TextArea fx:id="noticeContent" layoutX="190.0" layoutY="142.0" prefHeight="200.0" prefWidth="371.0" promptText="如：北门今天新装修啦，请大家绕道而行！" />
+                        <Button fx:id="launch" layoutX="332.0" layoutY="367.0" mnemonicParsing="false" onAction="#launchNotice" style="-fx-background-color: #ff0202;" text="发布！" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="停车场管理">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="513.0" fitWidth="1133.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/管理员界面背景图.jpg" />
+                           </image>
+                        </ImageView>
+                        <TableView fx:id="waiting" layoutY="271.0" prefHeight="200.0" prefWidth="282.0">
+                          <columns>
+                            <TableColumn fx:id="carID1" prefWidth="75.0" text="车牌号" />
+                            <TableColumn fx:id="arriveTime1" prefWidth="142.0" text="到达时间" />
+                              <TableColumn fx:id="position1" prefWidth="64.0" text="位置" />
+                          </columns>
+                        </TableView>
+                        <TableView fx:id="parking" layoutY="36.0" prefHeight="200.0" prefWidth="282.0">
+                           <columns>
+                              <TableColumn fx:id="carID" prefWidth="75.0" text="车牌号" />
+                              <TableColumn fx:id="arriveTime" prefWidth="142.0" text="到达时间" />
+                              <TableColumn fx:id="position" prefWidth="68.0" text="位置" />
+                           </columns>
+                        </TableView>
+                        <TableView fx:id="parkingLog" layoutX="282.0" layoutY="144.0" prefHeight="327.0" prefWidth="468.0">
+                          <columns>
+                            <TableColumn fx:id="carID2" prefWidth="85.0" text="车牌号" />
+                            <TableColumn fx:id="arriveTime2" prefWidth="107.0" text="到达时间" />
+                              <TableColumn fx:id="leaveTime2" prefWidth="107.0" text="离开时间" />
+                              <TableColumn fx:id="stayTime2" prefWidth="108.0" text="驻留时间" />
+                              <TableColumn fx:id="cost2" prefWidth="60.0" text="花销" />
+                          </columns>
+                        </TableView>
+                        <Label layoutX="37.0" layoutY="6.0" text="停车场情况（满停5辆车）">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="105.0" layoutY="247.0" text="便道情况">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="480.0" layoutY="120.0" text="停车日志">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <Button fx:id="park" layoutX="597.0" layoutY="18.0" mnemonicParsing="false" onAction="#parkNewCar" style="-fx-background-color: #ff0202;" text="入车" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <Button fx:id="leaveCar" layoutX="597.0" layoutY="71.0" mnemonicParsing="false" onAction="#leaveCar" style="-fx-background-color: #ff0202;" text="出车" textFill="WHITE">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Button>
+                        <TextField fx:id="inputCarID" layoutX="405.0" layoutY="25.0" promptText="请输入车牌号" />
+                        <Label layoutX="319.0" layoutY="77.0" text="左侧表中直接选中后点击出车即可">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

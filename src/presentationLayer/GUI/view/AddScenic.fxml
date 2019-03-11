@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="310.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationLayer.GUI.controller.AddScenic">
+   <children>
+      <TextField fx:id="name" layoutX="220.0" layoutY="24.0" promptText="如：北门" />
+      <TextField fx:id="intro" layoutX="220.0" layoutY="67.0" promptText="如：东北最美" />
+      <TextField fx:id="pop" layoutX="220.0" layoutY="105.0" promptText="如：9999" />
+      <Button fx:id="addNow" layoutX="188.0" layoutY="268.0" mnemonicParsing="false" onAction="#addNow" prefHeight="36.0" prefWidth="96.0" text="确定">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="102.0" layoutY="23.0" text="景点名称： ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="102.0" layoutY="66.0" text="景点介绍： ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="102.0" layoutY="104.0" text="景点热度： ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="150.0" text="是否有休息区： ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="66.0" layoutY="193.0" text="是否有卫生间： ">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <RadioButton fx:id="restY" layoutX="219.0" layoutY="153.0" mnemonicParsing="false" selected="true" text="是">
+         <toggleGroup>
+            <ToggleGroup fx:id="restApprove" />
+         </toggleGroup>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="restN" layoutX="331.0" layoutY="153.0" mnemonicParsing="false" text="否" toggleGroup="$restApprove">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="tolietY" layoutX="219.0" layoutY="196.0" mnemonicParsing="false" selected="true" text="是">
+         <toggleGroup>
+            <ToggleGroup fx:id="tolietApprove" />
+         </toggleGroup>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <RadioButton fx:id="tolietN" layoutX="331.0" layoutY="196.0" mnemonicParsing="false" text="否" toggleGroup="$tolietApprove">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </RadioButton>
+      <Label layoutX="127.0" layoutY="226.0" text="X坐标：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="299.0" layoutY="227.0" text="Y坐标：">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="X" layoutX="193.0" layoutY="227.0" prefHeight="23.0" prefWidth="85.0" promptText="如：500" />
+      <TextField fx:id="Y" layoutX="370.0" layoutY="227.0" prefHeight="23.0" prefWidth="85.0" promptText="如：500" />
+   </children>
+</AnchorPane>

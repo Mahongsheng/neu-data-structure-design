@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.canvas.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<SplitPane dividerPositions="0.6830601092896175" prefHeight="536.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="presentationLayer.GUI.controller.VisitorIndex">
+   <items>
+      <TabPane tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="景点分布图">
+               <content>
+                  <AnchorPane fx:id="distribution" minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="750.0">
+                     <children>
+                        <ImageView fitHeight="558.0" fitWidth="814.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/游客界面背景图.jpg" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="back" layoutX="643.0" layoutY="468.0" mnemonicParsing="false" onAction="#backToIndex" style="-fx-background-color: #ff0000;" text="返回上一级" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Button>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="景点查找">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="558.0" fitWidth="814.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/游客界面背景图.jpg" />
+                           </image>
+                        </ImageView>
+                        <TextField fx:id="景点关键词" layoutX="224.0" layoutY="26.0" prefHeight="37.0" prefWidth="183.0" promptText="景点关键词搜索" />
+                        <Button fx:id="景点搜索" layoutX="446.0" layoutY="27.0" mnemonicParsing="false" onAction="#searchScenic" prefHeight="34.0" prefWidth="72.0" style="-fx-background-color: #ff0000;" text="搜索" textFill="WHITE">
+                           <font>
+                              <Font name="System Italic" size="17.0" />
+                           </font>
+                        </Button>
+                        <TableView fx:id="searchTable" layoutY="86.0" prefHeight="420.0" prefWidth="750.0">
+                           <columns>
+                              <TableColumn fx:id="name1" editable="false" prefWidth="119.0" text="景点名称" />
+                              <TableColumn fx:id="intro1" editable="false" prefWidth="338.0" text="景点简介" />
+                              <TableColumn fx:id="pop1" editable="false" prefWidth="73.0" text="热度" />
+                              <TableColumn fx:id="rest1" prefWidth="73.0" text="休息区" />
+                              <TableColumn fx:id="toliet1" prefWidth="73.0" text="卫生间" />
+                              <TableColumn fx:id="wayNum1" prefWidth="73.0" text="岔路数" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="热门景点排序">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <ImageView fitHeight="558.0" fitWidth="814.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@img/游客界面背景图.jpg" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="sortByPop" layoutX="155.0" layoutY="29.0" mnemonicParsing="false" onAction="#sortByPop" prefHeight="45.0" prefWidth="132.0" style="-fx-background-color: #ff0000;" text="按照热度排序" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <Button fx:id="sortByWay" layoutX="450.0" layoutY="28.0" mnemonicParsing="false" onAction="#sortByWay" prefHeight="47.0" prefWidth="141.0" style="-fx-background-color: #ff0000;" text="按照岔路个数排序" textFill="WHITE">
+                           <font>
+                              <Font size="14.0" />
+                           </font></Button>
+                        <TableView fx:id="sortTable" layoutY="86.0" prefHeight="421.0" prefWidth="750.0">
+                           <columns>
+                              <TableColumn fx:id="name2" editable="false" prefWidth="119.0" text="景点名称" />
+                              <TableColumn fx:id="intro2" editable="false" prefWidth="338.0" text="景点简介" />
+                              <TableColumn fx:id="pop2" editable="false" prefWidth="73.0" text="热度" />
+                              <TableColumn fx:id="rest2" prefWidth="73.0" text="休息区" />
+                              <TableColumn fx:id="toliet2" prefWidth="73.0" text="卫生间" />
+                              <TableColumn fx:id="wayNum2" prefWidth="73.0" text="岔路数" />
+                           </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="查询路径">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <SplitPane fx:id="splitPaneQuery" dividerPositions="0.2295302013422819" layoutX="105.0" layoutY="94.0" prefHeight="507.0" prefWidth="750.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                           <items>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                                 <children>
+                                    <ImageView fitHeight="558.0" fitWidth="814.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/游客界面背景图.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <ChoiceBox fx:id="startName" layoutX="14.0" layoutY="56.0" prefWidth="150.0" />
+                                    <ChoiceBox fx:id="endName" layoutX="14.0" layoutY="143.0" prefWidth="150.0" />
+                                    <Label layoutX="14.0" layoutY="20.0" prefHeight="27.0" prefWidth="107.0" text="请选择起点" textFill="#f28e26">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="14.0" layoutY="107.0" prefHeight="27.0" prefWidth="107.0" text="请选择终点" textFill="#f28e26">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="query" layoutX="5.0" layoutY="217.0" mnemonicParsing="false" onAction="#queryShortestPath" prefHeight="41.0" prefWidth="159.0" style="-fx-background-color: #ff0000;" text="查询最短路径" textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Button>
+                                    <Button fx:id="queryLoop" layoutX="5.0" layoutY="274.0" mnemonicParsing="false" onAction="#queryLoop" prefHeight="41.0" prefWidth="159.0" style="-fx-background-color: #ff0000;" text="导游路线图" textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                              <AnchorPane fx:id="queryShoterstPane" minHeight="0.0" minWidth="0.0" prefHeight="503.0" prefWidth="557.0">
+                                 <children>
+                                    <ImageView fitHeight="558.0" fitWidth="814.0" layoutX="-173.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@img/游客界面背景图.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children></AnchorPane>
+                           </items>
+                        </SplitPane>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+         <children>
+            <ImageView fitHeight="558.0" fitWidth="814.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@img/游客界面背景图.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="147.0" text="公告">
+               <font>
+                  <Font name="Microsoft YaHei" size="26.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="0.9047619047619048" endY="0.8523809523809524" startX="1.0">
+                     <stops>
+                        <Stop color="#d61863" />
+                        <Stop color="#18a6d6" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </textFill>
+            </Label>
+            <TableView fx:id="notice" layoutX="-1.0" layoutY="44.0" prefHeight="490.0" prefWidth="345.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="44.0">
+               <columns>
+                  <TableColumn fx:id="time" prefWidth="168.0" text="时间" />
+                  <TableColumn fx:id="content" prefWidth="182.0" text="内容" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </items>
+</SplitPane>
